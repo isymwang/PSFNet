@@ -1,0 +1,78 @@
+name: PSFN_x4
+model_type: SRModel
+scale: 4
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test_1:
+    name: val_set5
+    type: PairedImageDataset
+    dataroot_gt: /root/autodl-isr/Set5/HR
+    dataroot_lq: /root/autodl-isr/Set5/LR_bicubic/X4
+    filename_tmpl: "{}"
+    io_backend:
+      type: disk
+
+  test_2:
+    name: val_set14
+    type: PairedImageDataset
+    dataroot_gt: /root/autodl-isr/Set14/HR
+    dataroot_lq: /root/autodl-isr/Set14/LR_bicubic/X4
+    filename_tmpl: "{}"
+    io_backend:
+      type: disk
+
+  test_3:
+    name: val_B100
+    type: PairedImageDataset
+    dataroot_gt: /root/autodl-isr/BSD100/HR
+    dataroot_lq: /root/autodl-isr/BSD100/LR_bicubic/X4
+    filename_tmpl: "{}"
+    io_backend:
+      type: disk
+
+  test_4:
+    name: val_Urban100
+    type: PairedImageDataset
+    dataroot_gt: /root/autodl-isr/Urban100/HR
+    dataroot_lq: /root/autodl-isr/Urban100/LR_bicubic/X4
+    filename_tmpl: "{}"
+    io_backend:
+      type: disk
+
+  test_5:
+    name: val_Manga109
+    type: PairedImageDataset
+    dataroot_gt: /root/autodl-isr/Manga109/HR
+    dataroot_lq: /root/autodl-isr/Manga109/LR_bicubic/X4
+    filename_tmpl: "{}"
+    io_backend:
+      type: disk
+
+network_g:
+  type: PSFNet
+  dim: 36
+  n_blocks: 8
+  upscaling_factor: 4
+
+path:
+  pretrain_network_g: ~
+  strict_load_g: false
+  param_key: ~
+
+val:
+  save_img: true
+  flip_seq: false
+  center_frame_only: false
+  suffix: ~
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: true
