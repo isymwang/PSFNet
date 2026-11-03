@@ -2,6 +2,8 @@
 
 PyTorch implementation of **PSFNet: Patch-wise and Spatial-Frequency Collaborative Network for Lightweight Image Super-Resolution**.
 
+The paper has been accepted by **IEEE Signal Processing Letters (SPL)**.
+
 PSFNet is a lightweight single-image super-resolution network that jointly exploits structural relationships, spatial-frequency information, and feature statistics. Its main components include:
 
 - **PFF (Patch-wise Feature Fusion)**, consisting of:
@@ -147,7 +149,17 @@ For ×4 SR, PSFNet uses **191K parameters**, **0.74G Multi-Adds**, and reports *
 
 ## Citation
 
-Citation information will be updated after publication.
+If you find this work useful, please cite our paper accepted by **IEEE Signal Processing Letters**:
+
+```bibtex
+@article{ying2026patch,
+  title   = {Patch-wise and Spatial-Frequency Collaborative Network for Lightweight Image Super-Resolution},
+  author  = {Ying, Zhongna and Wang, Yiming and Wang, Yanfang and Huang, Qian},
+  journal = {IEEE Signal Processing Letters},
+  year    = {2026},
+  note    = {Accepted for publication}
+}
+```
 
 ---
 
@@ -161,5 +173,4 @@ This project is built upon [BasicSR](https://github.com/XPixelGroup/BasicSR). We
 
 For questions about PSFNet, please contact:
 
-- Zhongna Ying: `241607010091@hhu.edu.cn`
-- Qian Huang: `huangqian@hhu.edu.cn`
+- **Yiming Wang**: [wangyiming@nau.edu.cn](mailto:wangyiming@nau.edu.cn)
